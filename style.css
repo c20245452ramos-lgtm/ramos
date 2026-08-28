@@ -15,6 +15,7 @@ nav {
 }
 
 nav ul {
+
     display: flex;
     gap: 20px;
     padding: 0;
@@ -26,13 +27,13 @@ main {
     flex-wrap: wrap;
     gap: 30px;
     padding: 50px;
+    margin: 50px;
     max-width: 1200px;
-
 }
 
 main section {
-    flex: 2;
-    min-width: 400px;
+    flex: 1;
+    min-width: 280px;
     border: 2px solid black;
     padding: 20px;
 }
@@ -40,30 +41,44 @@ main section {
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
 
     nav ul {
         flex-direction: column;
         text-align: center;
-
     }
 
     main {
         padding: 15px;
         margin: 10px;
         gap: 20px;
+
     }
 
     main section {
         flex: 1 1 100%;
-        min-width: 0;
+        min-width: 0%;
         padding: 15px;
     }
 
-@media (max-width: 601px) {
     h1 {
         font-size: 100px;
         color: red;
+
     }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 50px;
+        color: rgb(17, 0, 255)
+    }
+
 }
