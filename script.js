@@ -1,3 +1,15 @@
+console.log("Hello, World!");
+console.log("From script.js file.");
+
+const myName = "Myco";
+let Age = 20;
+Number = "09915129248";
+const Address = "Manapla";
+
+console.log(`Name: ${myName}`);
+console.log(`Age: ${Age}`);
+console.log(`Number: ${Number}`);
+console.log(`Address: ${Address}`);
 console.log ("Hello World!");
 console.log ("From script.js file.");
 
@@ -15,16 +27,21 @@ console.log(67);
 
 function greet(greetings, names = []) {
     if (!Array.isArray(names)) {
+        
         names = names.join(", "); 
       
     }
+
+    return `${greetings} sa enyu ${names}`;
     return `${greetings}sa inyu ${names.join("alexander")}`;
 }
 
+console.log(greet("Mayung aga", ["Mark", "Bai", "Soy", "Tol", "Erp"]));
 console.log(greet("Mayung aga", ["alexa"]));
 
 
 const heading = document.querySelector("h1");
+heading.textContent = "Your Father's Name";
 heading.textContent = "your father's name";
 heading.style.color = "purple";
 heading.style.background = "yellow";
@@ -40,6 +57,8 @@ console.log("heading clicked");
 const contactHeading = document.querySelector("#contact h2");
 console.log(contactHeading);
 
+const projectHeading = document.querySelector("#projects h2");
+console.log(projectHeading);
 const servicesHeadingHeading = document.querySelector("#services h2");
 console.log(servicesHeadingHeading);
 
