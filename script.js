@@ -1,79 +1,64 @@
-console.log("Hello, World!");
+console.log("Hello world.");
 console.log("From script.js file.");
 
 const myName = "Myco";
-let Age = 20;
-Number = "09915129248";
-const Address = "Manapla";
+let age = 20;
+const number = "090946300889";
+const address = "MANAPLA";
 
 console.log(`Name: ${myName}`);
-console.log(`Age: ${Age}`);
-console.log(`Number: ${Number}`);
-console.log(`Address: ${Address}`);
-console.log ("Hello World!");
-console.log ("From script.js file.");
-
-const myName = "Alex";
-let age = 23;
-Age = 24;
-const Number = "09302324013";
-const address = "malinong gahod";
-
-console.log(`my name: ${myName}1`);
-console.log(`age: ${age} `);
-console.log(`number: ${Number}`);   
-console.log(`address: ${address}`);
+console.log(`Age: ${age}`);
+console.log(`Number: ${number}`);
+console.log(`Address: ${address}`);
 console.log(67);
 
 function greet(greetings, names = []) {
-    if (!Array.isArray(names)) {
-        
-        names = names.join(", "); 
-      
+    if (Array.isArray(names)) {
+        names = names.join(", ");
     }
-
     return `${greetings} sa enyu ${names}`;
-    return `${greetings}sa inyu ${names.join("alexander")}`;
 }
 
-console.log(greet("Mayung aga", ["Mark", "Bai", "Soy", "Tol", "Erp"]));
-console.log(greet("Mayung aga", ["alexa"]));
-
+console.log(greet("Mayung aga", ["Mark", "papalada", "yambot", "mamalada", "moew"]));
 
 const heading = document.querySelector("h1");
-heading.textContent = "Your Father's Name";
-heading.textContent = "your father's name";
-heading.style.color = "purple";
-heading.style.background = "yellow";
-heading.style.fontSize = "100px";
-console.log(heading);
+if (heading) {
+    heading.textContent = "RAMOS.";
+    heading.style.color = "purple";
+    heading.style.backgroundColor = "yellow";
+    heading.style.fontSize = "100px";
+    console.log(heading.textContent);
 
-heading.addEventListener("click", function() {
-heading.style.color = "red";
-console.log("heading clicked");
-});
-
+    heading.addEventListener("click", function () {
+        heading.style.color = "red";
+        console.log("Heading was clicked");
+    });
+}
 
 const contactHeading = document.querySelector("#contact h2");
-console.log(contactHeading);
+if (contactHeading) {
+    console.log(contactHeading);
+}
 
-const projectHeading = document.querySelector("#projects h2");
-console.log(projectHeading);
-const servicesHeadingHeading = document.querySelector("#services h2");
-console.log(servicesHeadingHeading);
+const projectsHeadingHeading = document.querySelector("#services h2");
+if (projectsHeadingHeading) {
+    console.log(projectsHeadingHeading);
+}
 
 const toggleButton = document.querySelector("#switch");
 const body = document.querySelector("body");
 let isOFF = false;
 
-toggleButton.addEventListener("click", function() {   
-isOFF = !isOFF;
-if (isOFF) {
-    body.style.backgroundColor = "black";
-    body.style.color = "white";
+if (toggleButton && body) {
+    toggleButton.addEventListener("click", function () {
+        isOFF = !isOFF;
 
-}else {
-    body.style.backgroundColor = "white";
-    body.style.color = "black";
- }
-})
+        if (isOFF) {
+            body.style.backgroundColor = "black";
+            body.style.color = "white";
+        } else {
+            body.style.backgroundColor = "white";
+            body.style.color = "black";
+        }
+    });
+}

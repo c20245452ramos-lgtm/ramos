@@ -9,166 +9,54 @@
 </head>
 
 <body>
-
-    <script>
-        class Course {
-    constructor(courseCode, tuitionFee, enrolledStudents) {
-        this.courseCode = courseCode,
-        this._tuitionFee = tuitionFee,
-        this.enrolledStudents = enrolledStudents
-    }
-
-    get tuitionFee() {
-        return this._tuitionFee
-    }
-
-    set tuitionFee(value) {
-        if (value < 0) {
-            console.log ("Error: Tuition fee cannot be negative.")
-        } else {
-            this._tuitionFee = value;
-        }
-    }
-
-    getDetails(){
-        return `course: ${this.courseCode} | Tuition: $${this._tuitionFee} | Students: ${this.enrolledStudents}`;
-    }
-}
-
-class ProfessionalCertCourse extends Course {
-    constructor(courseCode, tuitionFee, enrolledStudents, examFee) {
-        super(courseCode, tuitionFee, enrolledStudents)
-        this._examFee = examFee;
-    }
-
-    get examFee() {
-        return this._examFee;
-    }
-
-    set exameFee(value) {
-        if (value < 0) {
-            console.log ("Error: Exam fee cannot be negative.")
-        } else {
-            this._examFee = value;
-        }
-    }
-
-    getDetails() {
-        return `${super.getDetails} | Exam Fee: ${this._examFee}`
-    }
-}
-
-function calculateStudentTuition(course, scholarshipTier) {
-    let baseTotal = course.tuitionFee;
-
-    if (course instanceof ProfessionalCertCourse){
-        baseTotal += course.examFee;
-    }
-
-    let finalTotal;
-        if (scholarshipTier === "full"){
-            finalTotal = baseTotal * 0;
-        } else if (scholarshipTier === "Merit"){
-            finalTotal = baseTotal * 0.70;
-        } else if (scholarshipTier === "None"){
-            finalTotal = baseTotal;
-        } else {
-            console.log("Invalid scholarship tier")
-        }
-
-    return finalTotal.toFixed(2);
-}
-
-function auditCatalog(courseList) {
-    let totalStudents = 0;
-
-    for (let i = 0; i = courseList.Length; i++){
-        const course = courseList;
-
-        console.log(course.getDetails());
-
-        if (course.enrolledStudents < 5) {
-            console.log("[Warning] Under-enrolled course flag");
-        } else if (course.enrolledStudents > 30) {
-            console.log("[HIGH DEMAND] Additional section required ");
-        } else {
-            console.log("[OK] Enrollment healthy.");
-        }
-
-        totalStudents += course.enrolledStudents;
-    }
-    
-    return totalStudents;
-}
-
-console.log("=== TEST 1: Encapsulation & Validation ===");
-const cert = new ProfessionalCertCourse("CS-301", 1000, 35, 200);
-const intro = new Course("CS-101", 500, 3);
-console.log(cert.getDetails());
-
-// Expected: Course: CS-301 | Tuition: $1000 | Students: 35 | Exam Fee: $200
-cert.tuitionFee = -500;
-
-// Expected console output: Error: Tuition fee cannot be negative.
-console.log(`Verified Tuition: $${cert.tuitionFee}`);
-
-// Expected: Verified Tuition: $1000
-console.log("\n=== TEST 2: Pricing & Scholarships ===");
-console.log(`Merit Cert Tuition: $${calculateStudentTuition(cert, "Merit")}`);
-
-// Base ($1000+$200) = $1200 -> -30% -> Expected: 840.00
-console.log(`None Intro Tuition: $${calculateStudentTuition(intro, "None")}`);
-
-// Base $500 -> 0% -> Expected: 500.00
-console.log("\n=== TEST 3: Catalog Audit ===");
-const catalog = [
-    cert,
-    intro,
-    new ProfessionalCertCourse("CS-401", 1200, 15, 250),
-    new Course("CS-102", 500, 12)
-];
-const totalEnrolled = auditCatalog(catalog);
-console.log(`\nTotal Enrolled Platform Students: ${totalEnrolled}`);
-    </script>
+    <h1>MYCO B. RAMOS</h1>
+    <button id="switch">Switch</button>
     <header>
-        <h1>Myco B. Ramos</h1>
-        <nav aria-label="Main navigation">
+        <nav>
+            <span>@myco</span>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">Contact Me</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! My name is Myco Ramos. I am a web developer with a passion for creating dynamic and user-friendly
-                websites.</p>
+        <section id="projects">
+            <h2 class="projects">My Projects</h2>
+            <p>Personal portfolio, payroll system, company website, startup website, and compliance monitoring system.
+            </p>
         </section>
 
         <section id="services">
-            <h2>Services</h2>
-            <p>I offer front-end and back-end web development services.</p>
+            <h2 class="services">My Services</h2>
+            <p>Website Creation, System Creation, AI Automation, Database Management, Project Management, Systems
+                Analyst</p>
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
+            <h2 class="contact">Let's build together!</h2>
             <form action="#">
-                <label for="name">Name:</label>
+                <!-- Name -->
+                <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
+                <!-- Message -->
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="5" required></textarea>
 
+                <!-- Submit -->
                 <button type="submit">Send Message</button>
             </form>
         </section>
     </main>
+
+    <!-- <script src="script.js"></script> -->
 </body>
 
 </html>
