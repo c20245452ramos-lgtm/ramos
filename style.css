@@ -105,5 +105,13 @@ h2 {
 }
 
 h1 {
+<<<<<<< HEAD
     color: green;
+=======
+    color: blue;
+
+}
+#projects {
+    background-color: orange;
+>>>>>>> hot-theme
 }
