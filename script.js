@@ -1,10 +1,10 @@
 console.log("Hello world.");
 console.log("From script.js file.");
 
-const myName = "Myco";
+const myName = "ARJAY";
 let age = 20;
 const number = "090946300889";
-const address = "MANAPLA";
+const address = "DITO LANG SA TABI TABI";
 
 console.log(`Name: ${myName}`);
 console.log(`Age: ${age}`);
@@ -18,12 +18,11 @@ function greet(greetings, names = []) {
     }
     return `${greetings} sa enyu ${names}`;
 }
-
 console.log(greet("Mayung aga", ["Mark", "papalada", "yambot", "mamalada", "moew"]));
 
 const heading = document.querySelector("h1");
 if (heading) {
-    heading.textContent = "RAMOS.";
+    heading.textContent = "Myco Ramos";
     heading.style.color = "purple";
     heading.style.backgroundColor = "yellow";
     heading.style.fontSize = "100px";
@@ -40,9 +39,9 @@ if (contactHeading) {
     console.log(contactHeading);
 }
 
-const projectsHeadingHeading = document.querySelector("#services h2");
-if (projectsHeadingHeading) {
-    console.log(projectsHeadingHeading);
+const projectsHeading = document.querySelector("#services h2");
+if (projectsHeading) {
+    console.log(projectsHeading);
 }
 
 const toggleButton = document.querySelector("#switch");
@@ -62,3 +61,27 @@ if (toggleButton && body) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.querySelector("#switch");
+    const body = document.body;
+
+    if (!toggleButton || !body) {
+        console.log("Switch button or body not found.");
+        return;
+    }
+
+    toggleButton.addEventListener("click", () => {
+        const isDark = body.classList.toggle("dark");
+
+        if (isDark) {
+            body.style.backgroundColor = "black";
+            body.style.color = "white";
+        } else {
+            body.style.backgroundColor = "white";
+            body.style.color = "black";
+        }
+    });
+});
+
+<button id="switch">Toggle Theme</button>
