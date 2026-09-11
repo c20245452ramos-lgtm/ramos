@@ -103,4 +103,8 @@ button:hover {
 }
 h1 {
     color: blue;
+
+}
+#projects {
+    background-color: orange;
 }
