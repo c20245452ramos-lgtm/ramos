@@ -84,4 +84,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-<button id="switch">Toggle Theme</button>
